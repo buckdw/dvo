@@ -1,4 +1,4 @@
 ansible-playbook \
--vv \
+-v \
 -i hosts \
 $(basename ${BASH_SOURCE} .sh).yml
