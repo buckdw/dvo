@@ -1,0 +1,15 @@
+# get scripts GRFDv1
+- name: Get DVO scripts GRFDv1
+  grfd.azdo.delta:
+    azdo_repo_url: "{{ repolist.repo }}"
+    azdo_username: "{{ dvo_azdo_username }}"
+    azdo_private_token: "{{ dvo_azdo_private_token }}"
+    azdo_base_version: PRODDEPLOYED
+    azdo_base_type: tag      
+    azdo_target_version: release/PROD
+    azdo_target_type: branch
+    filter_include_files: dvo_script
+    delta_modus: full
+  environment:
+    ANSIBLE_COVERAGE: False
+  register: register_list

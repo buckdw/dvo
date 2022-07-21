@@ -1,0 +1,15 @@
+# get dvml GRFDv2
+- name: Get DVO dvml GRFDv2
+  grfd.azdo.delta:
+    azdo_repo_url: "{{ repolist.repo }}"
+    azdo_username: "{{ dvo_azdo_username }}"
+    azdo_private_token: "{{ dvo_azdo_private_token }}"
+    azdo_base_version: PRODDEPLOYED
+    azdo_base_type: tag      
+    azdo_target_version: REGRESSIONSUCCESS
+    azdo_target_type: tag
+    filter_include_files: dvo_dvml
+    delta_modus: delta
+  environment:
+    ANSIBLE_COVERAGE: False
+  register: register_list
